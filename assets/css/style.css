@@ -127,6 +127,10 @@ body {
   height: 300vh;
 }
 
+body.nav-active {
+  overflow: hidden;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -168,7 +172,7 @@ body {
   #HEADER
 \*-----------------------------------*/
  
-.overlay,
+
 .header .btn {display: none;}
 
 .header {
@@ -188,7 +192,7 @@ body {
   /* box-shadow: var(--shadow-2); */
 }
 
-@heyframes slideIn {
+@keyframes slideIn {
   0% {
     transform: translateY(-100%);
   }
@@ -205,8 +209,8 @@ body {
 }
 
 
-/* .header.active .logo-light,
-.header .logo-dark { display: none; } */
+.header.active .logo-light,
+.header .logo-dark { display: none; }
 
 
 .header .logo-light,
@@ -227,7 +231,7 @@ body {
 .navbar {
   position: fixed;
   top: 0;
-  left: -300;
+  left: -300px;
   background-color: var(--raisin-black);
   color: var(--white);
   max-width: 300px;
@@ -243,7 +247,63 @@ body {
   transition: var(--transition-3);
 }
 
+.navbar.active{
+  visibility: visible;
+  transform: translateX(300px);
+}
 
+.navbar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-close-btn {
+  background-color: var(--white_a8);
+  color: var(--white);
+  font-size: 2rem;
+  padding: 6px;
+  border-radius: var(--radius-circle);
+  transition: var(--transition-1);
+}
+
+.nav-close-btn ion-icon {--ion-icon-stroke-width: 50px;}
+
+.nav-close-btn:is(:hover, :focus-visible) {
+  background-color: var(--white_a12);
+}
+
+.navbar-list {
+  margin-block-end: auto;
+}
+
+.navbar-link {
+  font-weight: var(--fw-700);
+  padding: 6px;
+}
+
+.contact-link { transition: var(--transition-1);}
+
+.contact-link:is(:hover, :focus-visible){
+  color: var(--violet-blue-crayola);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--raisin-black);
+  pointer-events: none;
+  opacity: 0;
+  transition: var(--transition-1);
+}
+
+.overlay.active {
+  pointer-events: all;
+  opacity: 0.8;
+}
 /*-----------------------------------*\
   #HERO
 \*-----------------------------------*/
