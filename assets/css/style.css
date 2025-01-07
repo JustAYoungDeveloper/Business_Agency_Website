@@ -229,6 +229,26 @@ body.nav-active {
   width: 100%;
   object-fit: cover;
 }
+
+
+.section-subtitle {
+  font-size: var(--fs-7);
+  text-transform: uppercase;
+  color: var(--violet-blue-crayola);
+  font-weight: var(--fw-700);
+  margin-block-end: 16px;
+}
+
+.grid-list {
+  display: grid;
+  gap: 25px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+
 /*-----------------------------------*\
   #HEADER
 \*-----------------------------------*/
@@ -461,7 +481,51 @@ body.nav-active {
   #SERVICE
 \*-----------------------------------*/
 
+.service {
+  text-align: center;
+}
 
+.service .section-title {margin-block-end: 50px;}
+
+.service-card {
+  padding: 40px;
+  box-shadow: var(--shadow-2);
+  border-radius: var(--radius-6);
+}
+
+.service-card .card-icon {
+  width: 60px;
+  height: 60px;
+  background-color: var(--violet-blue-crayola);
+  display: grid;
+  place-items: center;
+  color: var(--white);
+  font-size: 2.5rem;
+  border-radius: var(--radius-circle);
+  margin-inline: auto
+  ;
+}
+
+.service-card .card-icon {
+  --ionicon-stroke-width: 50px;
+}
+
+.service-card .card-title { margin-block: 16px 10px; }
+
+.service-card .btn-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  margin-block-start: 10px;
+  color: var(--violet-blue-crayola);
+  font-weight: var(--fw-700);
+  transition: var(--transition-1);
+}
+
+.service-card .btn-text:is(:hover, :focus-visible) {
+  opacity: 0.9;
+}
 
 
 
@@ -469,15 +533,86 @@ body.nav-active {
   #ABOUT
 \*-----------------------------------*/
 
+.about .container {
+  display: grid;
+  gap: 50px;
+}
+
+.about .section-title{
+  margin-block-end: 35px;
+}
+
+.accordian-card .card-title {
+  padding-block-end: 20px;
+}
+
+.accordian-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.accordian-btn ion-icon {
+  font-size: 1.5rem;
+  color: var(--blue-crayola);
+  transition: var(--transition-1);
+}
+
+.accordian-card.expanded .accordian-btn ion-icon {
+  transform: rotate(0.5turn);
+}
+
+.accordian-btn .span{
+  transition: var(--transition-1);
+}
+
+.accordian-btn:is(:hover, :focus-visible) .span,
+.accordian-card.expanded .accordian-btn .span { color: var(--violet-blue-crayola);}
 
 
+.accordian-content {
+  padding-inline-start: 24px;
+  max-height: 0;
+  overflow: hidden;
+}
 
+.accordian-card.expanded .accordian-content{
+  max-height: max-content;
+  padding-block-end: 20px;
+}
 
 /*-----------------------------------*\
   #FEATURES
 \*-----------------------------------*/
 
+.feature .container {
+  display: grid;
+  gap: 50px;
+}
 
+.feature .section-text {
+  margin: 25px 30px;
+}
+
+.feature-list {
+  display: grid;
+  gap: 15px;
+}
+
+.feature-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.feature-card .card-icon {
+  background-color: var(--lavender-web);
+  font-size: 1.4rem;
+  padding: 4px;
+  border-radius: var(--radius-circle);
+}
+
+.feature-card .card-icon ion-icon { --ionicon-stroke-width: 40px}
 
 
 
@@ -485,7 +620,20 @@ body.nav-active {
   #STATS
 \*-----------------------------------*/
 
+.stats {background-image: linear-gradient(to bottom, var(--white) 50%, var(--cultured) 50%);}
 
+.stats-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  gap: 36px 24px;
+  padding: 45px 30px;
+  border-radius: var(--radius-8);
+}
+
+.stats-card .card-text > * {
+  color: var(--white);
+}
 
 
 

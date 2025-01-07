@@ -85,3 +85,32 @@ const initSlider = function(currentSlider) {
 for (let i = 0, len = sliders.length; i < len; i++) {
   initSlider(sliders[i])
 }
+
+
+
+
+// Accordian section
+
+const accordians = document.querySelectorAll("[data-accordion]");
+
+let lastActiveAccordian = accordians[0];
+
+const initAccordian = function (currentAccordian) {
+  const accoridanBtn = currentAccordian.querySelector('[data-accordian-btn]')
+
+  const expandAccordian = function () {
+    if (lastActiveAccordian && lastActiveAccordian !== currentAccordian ) {
+      lastActiveAccordian.classList.remove('expanded')
+    }
+
+    currentAccordian.classList.toggle("expanded");
+  
+    lastActiveAccordian = currentAccordian;
+  }
+
+  accoridanBtn.addEventListener("click", expandAccordian)
+}
+
+for (let i = 0, len = accordians.length; i < len; i++) {
+  initAccordian(accordians[i])
+}
