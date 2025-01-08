@@ -641,16 +641,63 @@ body.nav-active {
   #PROJECT
 \*-----------------------------------*/
 
+.project { background-color: var(--cultured); }
 
+.project :is(.section-subtitle, .section-title) { text-align: center;}
 
+.project .section-title { margin-block-end: 50px;}
 
+.project-card {
+  background-color: var(--white);
+  border-radius: var(--radius-8);
+  overflow: hidden;
+  box-shadow: var(--shadow-2);
+  height: 100%;
+}
+
+.project-card .card-content { padding: 30px;}
+
+.project-card .card-text {margin-block: 16px 20px; }
+
+.project-card .card-meta-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.project-card .card-title { transition: var(--transition-1);}
+
+.project-card .card-title:is(:hover, :focus-visible) { color: var(--violet-blue-crayola);}
+
+.project-card .card-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--cadet-blue-crayola);
+  font-size: var(--fs-8);
+}
 
 /*-----------------------------------*\
   #CTA
 \*-----------------------------------*/
 
+.cta { background-color: var(--charcoal);}
 
+.cta .container {
+  padding-block: 100px 60px;
+  border-block-end: 1px solid var(--cadet-blue-crayola_a20);
+}
 
+.cta .section-title {
+  color: var(--white);
+  margin-block-end: 30px;
+}
+
+.cta .btn {
+  background-color: var(--violet-blue-crayola);
+  color: var(--white);
+  border: none;
+}
 
 
 /*-----------------------------------*\
